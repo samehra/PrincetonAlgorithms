@@ -1,6 +1,7 @@
 """QuickUnion (union-find) Algorithm."""
 
 from AlgsSedgewickWayne.BaseComp import BaseComp
+import numpy as np
 
 class QuickUnionUF(BaseComp):
   """Union command is Quick."""
@@ -8,7 +9,8 @@ class QuickUnionUF(BaseComp):
   def __init__(self, N):     # $ = N
     """Set if of each object to itself."""
     super(QuickUnionUF, self).__init__("QuickUnionUF")
-    self.ID = range(N) # Runs N array accesses
+    #self.ID = range(N) # Runs N array accesses
+    self.ID = list(np.arange(N))
 
   def _root(self, i):
     """Chase parent pointers until reach root."""
